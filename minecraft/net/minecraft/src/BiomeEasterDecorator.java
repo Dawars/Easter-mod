@@ -59,7 +59,7 @@ public class BiomeEasterDecorator extends BiomeDecorator {
 
     private int getID(){
     		Random rand = new Random();
-    		switch(rand.nextInt(9)+1){
+    		switch(rand.nextInt(8)+1){
    
 	    		case 1:
 	    			return EasterBlocks.MysteryEgg1.blockID;
@@ -77,11 +77,11 @@ public class BiomeEasterDecorator extends BiomeDecorator {
 	    			return EasterBlocks.MysteryEgg7.blockID;
 	    		case 8:
 	    			return EasterBlocks.MysteryEgg8.blockID;
-	    		case 9:
-	    			return EasterBlocks.MysteryEgg9.blockID;
+//	    		case 9:
+//	    			return EasterBlocks.MysteryEgg9.blockID;
 	    			
     		}
-			return EasterBlocks.MysteryEgg9.blockID;
+			return EasterBlocks.MysteryEgg8.blockID;
     		
     		
     	}

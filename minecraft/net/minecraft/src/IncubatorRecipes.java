@@ -85,8 +85,8 @@ public class IncubatorRecipes
         		item.itemID == EasterBlocks.MysteryEgg5.blockID ||
         		item.itemID == EasterBlocks.MysteryEgg6.blockID ||
         		item.itemID == EasterBlocks.MysteryEgg7.blockID ||
-        		item.itemID == EasterBlocks.MysteryEgg8.blockID ||
-        		item.itemID == EasterBlocks.MysteryEgg9.blockID){
+        		item.itemID == EasterBlocks.MysteryEgg8.blockID
+        		){
         	return new ItemStack(getLoot(), 1, 0);
         } else {
         	return (ItemStack)smeltingList.get(Integer.valueOf(item.itemID));
@@ -114,7 +114,7 @@ public class IncubatorRecipes
 	    	case 9:
 				return EasterBlocks.PinkyBush.blockID;
 	    	case 10:
-				return EasterBlocks.MysteryEgg9.blockID;
+				return EasterBlocks.MysteryEgg8.blockID;
     	}
     	return 0;
     }

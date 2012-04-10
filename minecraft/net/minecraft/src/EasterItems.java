@@ -64,7 +64,7 @@ public class EasterItems {
 		Raisins = (new EasterItemRaisins(mod_easter.idItemRaisins, EasterBlocks.RaisinsCrop.blockID, Block.tilledField.blockID)).setItemName("Raisins");
 		ChocolateDiamond = (new ItemChocolateDiamonds(mod_easter.idItemChocolateDiamonds, 6)).setItemName("ChocolateDiamond");
 
-		EasterMonsterSpawner = (new EasterItemMonsterPlacer(mod_easter.idItemEasterMonsterSpawner)).setItemName("EasterMosterPlacer");
+//		EasterMonsterSpawner = (new EasterItemMonsterPlacer(mod_easter.idItemEasterMonsterSpawner)).setItemName("EasterMosterPlacer");
 		WhiteChocolateDust = (new EasterItemWhiteChocolateDust(mod_easter.idItemEasterWhiteChocolateDust)).setItemName("WhiteChocolateDust");
 		WhiteChocolateBar = (new ItemEasterFood(mod_easter.idItemEasterWhiteChocolateBar, 5, true, 10)).setItemName("WhiteChocolateBar");
 		DarkChocolateBar = (new ItemEasterFood(mod_easter.idItemEasterDarkChocolateBar, 5, true, 11)).setItemName("DarkChocolateBar");
@@ -120,7 +120,7 @@ public class EasterItems {
         ModLoader.addName(Raisins, "Raisins");
         ModLoader.addName(ChocolateDiamond, "Chocolate Diamond");
         ModLoader.addName(TombWand, "Jesus Tomb Cross");
-        ModLoader.addName(EasterMonsterSpawner, "Easter Bunny Spawner");
+//        ModLoader.addName(EasterMonsterSpawner, "Easter Bunny Spawner");
         ModLoader.addName(WhiteChocolateDust, "White Chocolate Dust");
         ModLoader.addName(WhiteChocolateBar, "White Chocolate Bar");
         ModLoader.addName(DarkChocolateBar, "Dark Chocolate Bar");

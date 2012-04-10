@@ -17,7 +17,7 @@ public class GuiIncubator extends GuiContainer
      */
     protected void drawGuiContainerForegroundLayer()
     {
-        this.fontRenderer.drawString(StatCollector.translateToLocal("Incubator"), 60, 6, 4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal("Egg Opener"), 60, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 

@@ -69,7 +69,10 @@ public class TileEntityIncubator extends TileEntity implements IInventory, ISide
             return null;
         }
     }
-
+    public static boolean func_52005_b(ItemStack par0ItemStack)
+    {
+        return getItemBurnTime(par0ItemStack) > 0;
+    }
     /**
      * When some containers are closed they call this on each slot, then drop whatever it returns as an EntityItem -
      * like when you close a workbench GUI.
@@ -184,7 +187,7 @@ public class TileEntityIncubator extends TileEntity implements IInventory, ISide
     {
         if (this.currentItemBurnTime == 0)
         {
-            this.currentItemBurnTime = 200;
+            this.currentItemBurnTime = 20;
         }
 
         return this.incubatorBurnTime * par1 / this.currentItemBurnTime;
@@ -328,7 +331,7 @@ public class TileEntityIncubator extends TileEntity implements IInventory, ISide
      * Returns the number of ticks that the supplied fuel item will keep the incubator burning, or 0 if the item isn't
      * fuel
      */
-    public int getItemBurnTime(ItemStack par1ItemStack)
+    public static int getItemBurnTime(ItemStack par1ItemStack)
     {
         if (par1ItemStack == null)
         {
@@ -336,8 +339,8 @@ public class TileEntityIncubator extends TileEntity implements IInventory, ISide
         }
         else
         {
-            int var2 = par1ItemStack.getItem().shiftedIndex;
-            return var2 < 256 && Block.blocksList[var2].blockMaterial == Material.wood ? 300 : (var2 == Item.stick.shiftedIndex ? 100 : (var2 == Item.coal.shiftedIndex ? 1600 : (var2 == Item.bucketLava.shiftedIndex ? 20000 : (var2 == Block.sapling.blockID ? 100 : (var2 == Item.blazeRod.shiftedIndex ? 2400 : ModLoader.addAllFuel(par1ItemStack.itemID, par1ItemStack.getItemDamage()))))));
+            int var1 = par1ItemStack.getItem().shiftedIndex;
+            return var1 < 256 && Block.blocksList[var1].blockMaterial == Material.wood ? 300 : (var1 == Item.stick.shiftedIndex ? 100 : (var1 == Item.coal.shiftedIndex ? 1600 : (var1 == Item.bucketLava.shiftedIndex ? 20000 : (var1 == Block.sapling.blockID ? 100 : (var1 == Item.blazeRod.shiftedIndex ? 2400 : ModLoader.addAllFuel(par1ItemStack.itemID, par1ItemStack.getItemDamage()))))));
         }
     }
 

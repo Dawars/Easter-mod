@@ -108,7 +108,7 @@ public class mod_easter extends BaseMod{
 		ModLoader.setInGameHook(this, true, true);
 		ModLoader.setInGUIHook(this, true, true);
 		
-		ModLoader.registerTileEntity(net.minecraft.src.TileEntityIncubator.class, "Incubator");
+		ModLoader.registerTileEntity(net.minecraft.src.TileEntityIncubator.class, "Egg Opener");
 //		ModLoader.registerEntity(net.minecraft.src.EntityGoldenEgg.class, "goldenegg");
 //		ModLoader.registerEntityRenderer(net.minecraft.src.EntityGoldenEgg.class, new RenderGoldenEgg());
 	}
@@ -117,7 +117,7 @@ public class mod_easter extends BaseMod{
 	
 	@Override
 	public String getVersion() {
-		return "1.0";
+		return "1.1";
 	}
 
 	@Override
@@ -163,7 +163,6 @@ public class mod_easter extends BaseMod{
 				list.add(new ItemStack(EasterBlocks.MysteryEgg6));
 				list.add(new ItemStack(EasterBlocks.MysteryEgg7));
 				list.add(new ItemStack(EasterBlocks.MysteryEgg8));
-				list.add(new ItemStack(EasterBlocks.MysteryEgg9));
 				list.add(new ItemStack(EasterBlocks.Dahlia));
 				list.add(new ItemStack(EasterBlocks.Daisy));
 				list.add(new ItemStack(EasterBlocks.PinkyBush));

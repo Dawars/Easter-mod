@@ -87,11 +87,11 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
     /**
      * Pass true to draw this block using fancy graphics, or false for fast graphics.
      */
-    public void setGraphicsLevel(boolean par1)
-    {
-        this.graphicsLevel = par1;
-        this.blockIndexInTexture = this.baseIndexInPNG + (par1 ? 0 : 1);
-    }
+//    public void setGraphicsLevel(boolean par1)
+//    {
+//        this.graphicsLevel = par1;
+//        this.blockIndexInTexture = this.baseIndexInPNG + (par1 ? 0 : 1);
+//    }
 
     public boolean shouldSideBeRendered(IBlockAccess iblockaccess, int i, int j, int k, int l)
     {
@@ -244,7 +244,7 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
     }
     public int quantityDropped(Random par1Random)
     {
-        return par1Random.nextInt(20) == 0 ? 1 : 0;
+        return 1;
     }
     
     public int idDropped(int i, Random random)
@@ -268,7 +268,7 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
 		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterBlocks.CocoaSapling, 1, this.damageDropped(par5)));
 		            }
 		
-		            if ((par5 & 3) == 0 && par1World.rand.nextInt(15) == 0)
+		            if ((par5 & 3) == 0 && par1World.rand.nextInt(10) == 0)
 		            {
 		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
 		            }

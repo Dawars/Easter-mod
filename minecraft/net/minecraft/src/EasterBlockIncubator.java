@@ -20,17 +20,20 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
      */
     private static boolean keepIncubatorInventory = false;
 
-    protected EasterBlockIncubator(int i, boolean j)
+    protected EasterBlockIncubator(int par1, boolean par2)
     {
-        super(i, Material.rock);
-        this.isActive = j;
+        super(par1, Material.rock);
+        this.isActive = par2;
         this.blockIndexInTexture = 35;
     }
-
+    @Override
+	public String getTextureFile() {
+		return "/easter/EasterBlocks.png";
+	}
     /**
      * Returns the ID of the items to drop on destruction.
      */
-    public int idDropped(int i, Random jRandom, int k)
+    public int idDropped(int par1, Random par2Random, int par3)
     {
         return EasterBlocks.EasterIncubatorIdle.blockID;
     }
@@ -38,23 +41,23 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
     /**
      * Called whenever the block is added into the world. Args: world, x, y, z
      */
-    public void onBlockAdded(World world, int j, int k, int par4)
+    public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
-        super.onBlockAdded(world, j, k, par4);
-        this.setDefaultDirection(world, j, k, par4);
+        super.onBlockAdded(par1World, par2, par3, par4);
+        this.setDefaultDirection(par1World, par2, par3, par4);
     }
 
     /**
      * set a blocks direction
      */
-    private void setDefaultDirection(World world, int j, int k, int par4)
+    private void setDefaultDirection(World par1World, int par2, int par3, int par4)
     {
-        if (!world.isRemote)
+        if (!par1World.isRemote)
         {
-            int var5 = world.getBlockId(j, k, par4 - 1);
-            int var6 = world.getBlockId(j, k, par4 + 1);
-            int var7 = world.getBlockId(j - 1, k, par4);
-            int var8 = world.getBlockId(j + 1, k, par4);
+            int var5 = par1World.getBlockId(par2, par3, par4 - 1);
+            int var6 = par1World.getBlockId(par2, par3, par4 + 1);
+            int var7 = par1World.getBlockId(par2 - 1, par3, par4);
+            int var8 = par1World.getBlockId(par2 + 1, par3, par4);
             byte var9 = 3;
 
             if (Block.opaqueCubeLookup[var5] && !Block.opaqueCubeLookup[var6])
@@ -77,75 +80,66 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
                 var9 = 4;
             }
 
-            world.setBlockMetadataWithNotify(j, k, par4, var9);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9);
         }
     }
 
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
      */
-    public int getBlockTexture(IBlockAccess IBlockAccess, int i, int j, int k, int l)
+    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
-    	int index;
-    	
-    	
-        if (l == 1)
+        if (par5 == 1)
         {
-        	index =  this.blockIndexInTexture;
+            return this.blockIndexInTexture;
         }
-        else if (l == 0)
+        else if (par5 == 0)
         {
-        	index =  this.blockIndexInTexture;
+            return this.blockIndexInTexture;
         }
         else
         {
-            int var6 = IBlockAccess.getBlockMetadata(i, j, k);
-            index = l != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 2 : this.blockIndexInTexture + 1);
+            int var6 = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
+            return par5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 2 : this.blockIndexInTexture + 1);
         }
-        switch(l){
-    		case 5://back
-    			index = this.blockIndexInTexture;
-			break;
-    	}
-        return index;
     }
 
     /**
      * A randomly called display update to be able to add particles or other items for display
      */
-//    public void randomDisplayTick(World world, int j, int k, int par4, Random par5Random)
-//    {
+    public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    {
 //        if (this.isActive)
 //        {
-//            int var6 = world.getBlockMetadata(j, k, par4);
-//            float var7 = (float)j + 0.5F;
-//            float var8 = (float)k + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
+//            int var6 = par1World.getBlockMetadata(par2, par3, par4);
+//            float var7 = (float)par2 + 0.5F;
+//            float var8 = (float)par3 + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
 //            float var9 = (float)par4 + 0.5F;
 //            float var10 = 0.52F;
 //            float var11 = par5Random.nextFloat() * 0.6F - 0.3F;
 //
 //            if (var6 == 4)
 //            {
-//                world.spawnParticle("smoke", (double)(var7 - var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
-//                world.spawnParticle("flame", (double)(var7 - var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("smoke", (double)(var7 - var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("flame", (double)(var7 - var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
 //            }
 //            else if (var6 == 5)
 //            {
-//                world.spawnParticle("smoke", (double)(var7 + var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
-//                world.spawnParticle("flame", (double)(var7 + var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("smoke", (double)(var7 + var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("flame", (double)(var7 + var10), (double)var8, (double)(var9 + var11), 0.0D, 0.0D, 0.0D);
 //            }
 //            else if (var6 == 2)
 //            {
-//                world.spawnParticle("smoke", (double)(var7 + var11), (double)var8, (double)(var9 - var10), 0.0D, 0.0D, 0.0D);
-//                world.spawnParticle("flame", (double)(var7 + var11), (double)var8, (double)(var9 - var10), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("smoke", (double)(var7 + var11), (double)var8, (double)(var9 - var10), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("flame", (double)(var7 + var11), (double)var8, (double)(var9 - var10), 0.0D, 0.0D, 0.0D);
 //            }
 //            else if (var6 == 3)
 //            {
-//                world.spawnParticle("smoke", (double)(var7 + var11), (double)var8, (double)(var9 + var10), 0.0D, 0.0D, 0.0D);
-//                world.spawnParticle("flame", (double)(var7 + var11), (double)var8, (double)(var9 + var10), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("smoke", (double)(var7 + var11), (double)var8, (double)(var9 + var10), 0.0D, 0.0D, 0.0D);
+//                par1World.spawnParticle("flame", (double)(var7 + var11), (double)var8, (double)(var9 + var10), 0.0D, 0.0D, 0.0D);
 //            }
 //        }
-//    }
+    }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
@@ -181,28 +175,28 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
     /**
      * Update which block ID the incubator is using depending on whether or not it is burning
      */
-    public static void updateIncubatorBlockState(boolean par0, World world, int j, int k, int par4)
+    public static void updateIncubatorBlockState(boolean par0, World par1World, int par2, int par3, int par4)
     {
-        int var5 = world.getBlockMetadata(j, k, par4);
-        TileEntity var6 = world.getBlockTileEntity(j, k, par4);
+        int var5 = par1World.getBlockMetadata(par2, par3, par4);
+        TileEntity var6 = par1World.getBlockTileEntity(par2, par3, par4);
         keepIncubatorInventory = true;
 
         if (par0)
         {
-            world.setBlockWithNotify(j, k, par4, EasterBlocks.EasterIncubatorActive.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, EasterBlocks.EasterIncubatorActive.blockID);
         }
         else
         {
-            world.setBlockWithNotify(j, k, par4, EasterBlocks.EasterIncubatorIdle.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, EasterBlocks.EasterIncubatorIdle.blockID);
         }
 
         keepIncubatorInventory = false;
-        world.setBlockMetadataWithNotify(j, k, par4, var5);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
 
         if (var6 != null)
         {
             var6.validate();
-            world.setBlockTileEntity(j, k, par4, var6);
+            par1World.setBlockTileEntity(par2, par3, par4, var6);
         }
     }
 
@@ -217,39 +211,39 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
     /**
      * Called when the block is placed in the world.
      */
-    public void onBlockPlacedBy(World world, int j, int k, int par4, EntityLiving par5EntityLiving)
+    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving)
     {
         int var6 = MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
         if (var6 == 0)
         {
-            world.setBlockMetadataWithNotify(j, k, par4, 2);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2);
         }
 
         if (var6 == 1)
         {
-            world.setBlockMetadataWithNotify(j, k, par4, 5);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5);
         }
 
         if (var6 == 2)
         {
-            world.setBlockMetadataWithNotify(j, k, par4, 3);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3);
         }
 
         if (var6 == 3)
         {
-            world.setBlockMetadataWithNotify(j, k, par4, 4);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4);
         }
     }
 
     /**
      * Called whenever the block is removed.
      */
-    public void onBlockRemoval(World world, int j, int k, int par4)
+    public void onBlockRemoval(World par1World, int par2, int par3, int par4)
     {
         if (!keepIncubatorInventory)
         {
-            TileEntityIncubator var5 = (TileEntityIncubator)world.getBlockTileEntity(j, k, par4);
+            TileEntityIncubator var5 = (TileEntityIncubator)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var5 != null)
             {
@@ -273,7 +267,7 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
                             }
 
                             var7.stackSize -= var11;
-                            EntityItem var12 = new EntityItem(world, (double)((float)j + var8), (double)((float)k + var9), (double)((float)par4 + var10), new ItemStack(var7.itemID, var11, var7.getItemDamage()));
+                            EntityItem var12 = new EntityItem(par1World, (double)((float)par2 + var8), (double)((float)par3 + var9), (double)((float)par4 + var10), new ItemStack(var7.itemID, var11, var7.getItemDamage()));
 
                             if (var7.hasTagCompound())
                             {
@@ -284,18 +278,13 @@ public class EasterBlockIncubator extends BlockContainer implements ITextureProv
                             var12.motionX = (double)((float)this.incubatorRand.nextGaussian() * var13);
                             var12.motionY = (double)((float)this.incubatorRand.nextGaussian() * var13 + 0.2F);
                             var12.motionZ = (double)((float)this.incubatorRand.nextGaussian() * var13);
-                            world.spawnEntityInWorld(var12);
+                            par1World.spawnEntityInWorld(var12);
                         }
                     }
                 }
             }
         }
 
-        super.onBlockRemoval(world, j, k, par4);
+        super.onBlockRemoval(par1World, par2, par3, par4);
     }
-
-	@Override
-	public String getTextureFile() {
-		return "/easter/EasterBlocks.png";
-	}
 }
