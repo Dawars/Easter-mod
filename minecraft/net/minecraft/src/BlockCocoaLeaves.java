@@ -260,9 +260,9 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
         if (!par1World.isRemote)
         {
         	if(this.blockID == EasterBlocks.CocoaLeaves.blockID){
-	        	if (par5 == 1){//damage
+//	        	if (par5 == 1){//damage
 	            
-		            if (par1World.rand.nextInt(10) == 0)
+		            if (par1World.rand.nextInt(8) == 0)
 		            {
 		
 		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterBlocks.CocoaSapling, 1, this.damageDropped(par5)));
@@ -272,7 +272,7 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
 		            {
 		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
 		            }
-	        	}
+//	        	}
         	}
         }
     }

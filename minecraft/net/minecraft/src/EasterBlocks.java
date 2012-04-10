@@ -45,7 +45,7 @@ public class EasterBlocks {
 		CocoaLog = new BlockCocoaLog(mod_easter.idBlockEasterCocoaBeansBushLog, 4).setHardness(2.0F).setStepSound(Block.soundWoodFootstep).setBlockName("EasterBushLog").setRequiresSelfNotify();
 		CocoaSapling = new BlockCocoaSapling(mod_easter.idBlockEasterCocoaBeansSapling, 7).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setBlockName("CocoaSapling").setRequiresSelfNotify();
 		CocoaLeaves = (new BlockCocoaLeaves(mod_easter.idBlockEasterCocoaBeansLeaves, 6)).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep).setBlockName("CocoaLeaves").setRequiresSelfNotify();
-		CocoaLeavesEmpty = (new BlockCocoaLeaves(mod_easter.idBlockEasterCocoaBeansLeaves2, 5)).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep).setBlockName("CocoaLeaves").setRequiresSelfNotify();
+		CocoaLeavesEmpty = (new BlockCocoaLeaves(mod_easter.idBlockEasterCocoaBeansLeaves2, 5)).setHardness(0.2F).setLightOpacity(1).setStepSound(Block.soundGrassFootstep).setBlockName("CocoaLeavesEmpty").setRequiresSelfNotify();
 		
 		EasterFlower = ((BlockFlower)new EasterBlockFlower(mod_easter.idBlockEasterFlower, 8)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setBlockName("EasterFlower");
 		EasterEggFlower = ((BlockFlower)new EasterBlockFlower(mod_easter.idBlockEasterEggFlower, 9)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setBlockName("EasterEggFlower");

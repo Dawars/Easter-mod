@@ -314,8 +314,8 @@ public class BlockGrave extends BlockDirectional implements ITextureProvider, IS
     }
 	@Override
 	public EnumStatus sleepInBedAt(EntityPlayer player, int X, int Y, int Z) {
-		EnumStatus a = null;
-		return a.OK;
+		
+		return EnumStatus.OK;//not working
 	}
 	
 }
