@@ -43,12 +43,13 @@ public class BlockCocoaSapling extends BlockFlower implements ITextureProvider
     	ItemStack itemstack = player.getCurrentEquippedItem();
     	if(itemstack != null && itemstack.itemID == Item.dyePowder.shiftedIndex && itemstack.getItemDamage() == 15){
     		this.growTree(world, i, j, k, rand);
+    		if (!world.isRemote)
+            {
+                player.getCurrentEquippedItem().stackSize--;
+            }
     	}
     	
-    	if (!world.isRemote)
-        {
-            player.getCurrentEquippedItem().stackSize--;
-        }
+    	
     	return true;
     }
 
