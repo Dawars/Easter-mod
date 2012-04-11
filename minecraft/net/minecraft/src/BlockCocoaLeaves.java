@@ -260,19 +260,15 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
         if (!par1World.isRemote)
         {
         	if(this.blockID == EasterBlocks.CocoaLeaves.blockID){
-//	        	if (par5 == 1){//damage
-	            
-		            if (par1World.rand.nextInt(8) == 0)
-		            {
-		
-		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterBlocks.CocoaSapling, 1, this.damageDropped(par5)));
-		            }
-		
-		            if ((par5 & 3) == 0 && par1World.rand.nextInt(10) == 0)
-		            {
-		                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
-		            }
-//	        	}
+        		if (par1World.rand.nextInt(8) == 0)
+	            {
+	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
+	            }
+        	} else if(this.blockID == EasterBlocks.CocoaLeavesEmpty.blockID){
+        		if (par1World.rand.nextInt(15) == 0)
+	            {
+	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterBlocks.CocoaSapling, 1));
+	            }
         	}
         }
     }

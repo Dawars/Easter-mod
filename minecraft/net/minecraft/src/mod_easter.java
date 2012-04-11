@@ -1,19 +1,31 @@
 package net.minecraft.src;
 
+import java.io.*;
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.src.forge.Configuration;
 import net.minecraft.src.forge.MinecraftForgeClient;
 
-public class mod_easter extends BaseMod{
+public class mod_easter extends BaseMod{	
+	public static final Configuration configuration = new Configuration(new File(Minecraft.getMinecraftDir() + "./config/Easter.cfg"));
+	
+	protected static int cI(String var0, int var1)
+    {
+        return (new ConfigManager(configuration, var0)).itemProperty(var1);
+    }
 
+    protected static int cB(String var0, int var1)
+    {
+        return (new ConfigManager(configuration, var0)).blockProperty(var1);
+    }
 	private boolean addBlocks;
 	
 	public static final BiomeGenBase Easter = (new BiomeGenEaster(24)).setColor(0xf13a01).setBiomeName("Easter Land");
 	
-	public static int idBlockChocolateLiquidStill = 166;
-	public static int idBlockChocolateLiquidActive = 167;
+//	public static int idBlockChocolateLiquidStill = 166;
+//	public static int idBlockChocolateLiquidActive = 167;
 	public static int idBlockEasterIncubatorActive = 168;
 	public static int idBlockEasterIncubatorIdle = 169;
 	public static int idBlockEasterCocoaBeansBushLog = 170;
@@ -95,29 +107,70 @@ public class mod_easter extends BaseMod{
 	public static int idItemWhiteChocolateEgg = 4039;
 	public static int idItemGrave = 4040;
 	
-//	public static int idItemMysteryEgg = 4040;
+	
+	
+	
+//	public static int idAchivementEgg = 2000;
+//	public static int idAchivementEggOpener = 2001;
+	
 	
 
 	
+//	public static final Achievement Egg = new Achievement(2000, "Egg", 5, 5, EasterBlocks.MysteryEgg3, null).setSpecial().registerAchievement();
+//	public static final Achievement EggOpener = new Achievement (idAchivementEggOpener, "EggOpener", -5, 5, EasterBlocks.EasterIncubatorActive, null).setSpecial().registerAchievement();
+	
+	static Achievement openInventory = AchievementList.openInventory;
+	static final Achievement Egg = new Achievement (2000, "EggOpener", -2, 0, Item.egg, openInventory).setSpecial().registerAchievement();
 
-	
-	
 	public mod_easter(){
+		
+
+		
+			
+			
+
+		ModLoader.addAchievementDesc(Egg, "Mystery Egg", "Search a painted egg on the ground");
+
+			
+			 
+			 
+		
 		ModLoader.addBiome(Easter);
+		
+//		ModLoader.addAchievementDesc(Egg, "Mystery egg", "Found The First Egg!");
+//		ModLoader.addAchievementDesc(EggOpener, "Egg Opener", "Gift Opening Time!");
 		
 		ModLoader.setInGameHook(this, true, true);
 		ModLoader.setInGUIHook(this, true, true);
 		
 		ModLoader.registerTileEntity(net.minecraft.src.TileEntityIncubator.class, "Egg Opener");
-//		ModLoader.registerEntity(net.minecraft.src.EntityGoldenEgg.class, "goldenegg");
-//		ModLoader.registerEntityRenderer(net.minecraft.src.EntityGoldenEgg.class, new RenderGoldenEgg());
 	}
+
 	
-	
+    public void onItemPickup(EntityPlayer player, ItemStack itemstack) {
+    	if(itemstack.itemID == EasterBlocks.MysteryEgg1.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg2.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg3.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg4.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg5.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg6.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg7.blockID ||
+    			itemstack.itemID == EasterBlocks.MysteryEgg8.blockID
+    			){
+    		player.addStat(Egg, 1);
+    	}
+    	
+    }
+//    public void takenFromCrafting(EntityPlayer player, ItemStack itemstack, IInventory iinventory){
+//    	if(itemstack.itemID == EasterBlocks.EasterIncubatorIdle.blockID){
+//    		player.addStat(Egg, 1);
+//    	}
+//    }
+
 	
 	@Override
 	public String getVersion() {
-		return "1.1";
+		return "1.2";
 	}
 
 	@Override
@@ -149,7 +202,7 @@ public class mod_easter extends BaseMod{
 				list.add(new ItemStack(EasterBlocks.CocoaLeaves));
 				list.add(new ItemStack(EasterBlocks.CocoaLeavesEmpty));
 				list.add(new ItemStack(EasterBlocks.EasterFlower));
-				list.add(new ItemStack(EasterBlocks.ChocolateLiquidActive));
+//				list.add(new ItemStack(EasterBlocks.ChocolateLiquidActive));
 				list.add(new ItemStack(EasterBlocks.EasterEggFlower));
 				list.add(new ItemStack(EasterBlocks.ChocolateOre));
 				list.add(new ItemStack(EasterBlocks.DarkBlock));

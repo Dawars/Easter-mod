@@ -116,7 +116,7 @@ public class ContainerIncubator extends Container
                 		var4.getItem().shiftedIndex == EasterBlocks.MysteryEgg5.blockID ||
                 		var4.getItem().shiftedIndex == EasterBlocks.MysteryEgg6.blockID ||
                 		var4.getItem().shiftedIndex == EasterBlocks.MysteryEgg7.blockID ||
-                		var4.getItem().shiftedIndex == EasterBlocks.MysteryEgg8.blockID                		)
+                		var4.getItem().shiftedIndex == EasterBlocks.MysteryEgg8.blockID)
                 {
                     if (!this.mergeItemStack(var4, 0, 1, false))
                     {

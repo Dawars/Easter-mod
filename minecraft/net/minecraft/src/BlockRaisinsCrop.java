@@ -119,10 +119,25 @@ public class BlockRaisinsCrop extends BlockFlower implements ITextureProvider
          */
         public int getBlockTextureFromSideAndMetadata(int par1, int par2)
         {
-            if (par2 < 0)
-            {
-                par2 = 7;
-            }
+        	switch(par2){
+	    		case 0:
+	    			return this.blockIndexInTexture;
+	    		case 1:
+	    			return this.blockIndexInTexture;
+	    		case 2:
+	    			return this.blockIndexInTexture+1;
+	    		case 3:
+	    			return this.blockIndexInTexture+1;
+	    		case 4:
+	    			return this.blockIndexInTexture+1;
+	    		case 5:
+	    			return this.blockIndexInTexture+2;
+	    		case 6:
+	    			return this.blockIndexInTexture+2;
+	    		case 7:
+	    			return this.blockIndexInTexture+3;
+    			
+        	}
 
             return this.blockIndexInTexture + par2;
         }

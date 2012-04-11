@@ -54,60 +54,61 @@ public class EasterItems {
 	
      EasterItems()
 	{
-		ChocolateEgg = (new ItemEasterFood(mod_easter.idItemChocolateEgg, 8, false, 0)).setItemName("chocolateEgg");
-		WhiteChocolateEgg = (new ItemEasterFood(mod_easter.idItemWhiteChocolateEgg, 8, false, 14)).setItemName("whiteChocolateEgg");
-		DarkChocolateEgg = (new ItemEasterFood(mod_easter.idItemDarkChocolateEgg, 8, false, 13)).setItemName("DarkChocolateEgg");
-		ChocolateBar = (new ItemEasterFood(mod_easter.idItemChocolateBar, 5, false, 12)).setItemName("chocolateBar");
-		TombWand = (new ItemTombWand(mod_easter.idBlockTombWand, 2)).setItemName("TombWand");
-		CrossBun = (new ItemEasterFood(mod_easter.idItemCrossBun, 1, false, 3)).setItemName("CrossBun");
-		HotCrossBun = (new ItemEasterFood(mod_easter.idItemHotCrossBun, 10, true, 4)).setItemName("HotCrossBun");
-		Raisins = (new EasterItemRaisins(mod_easter.idItemRaisins, EasterBlocks.RaisinsCrop.blockID, Block.tilledField.blockID)).setItemName("Raisins");
-		ChocolateDiamond = (new ItemChocolateDiamonds(mod_easter.idItemChocolateDiamonds, 6)).setItemName("ChocolateDiamond");
+		
+    	ChocolateEgg = (new ItemEasterFood(mod_easter.cI("ChocolateEgg", mod_easter.idItemChocolateEgg), 8, false, 0)).setItemName("chocolateEgg");
+		WhiteChocolateEgg = (new ItemEasterFood(mod_easter.cI("WhiteChocolateEgg", mod_easter.idItemWhiteChocolateEgg), 8, false, 14)).setItemName("whiteChocolateEgg");
+		DarkChocolateEgg = (new ItemEasterFood(mod_easter.cI("DarkChocolateEgg", mod_easter.idItemDarkChocolateEgg), 8, false, 13)).setItemName("DarkChocolateEgg");
+		ChocolateBar = (new ItemEasterFood(mod_easter.cI("ChocolateBar", mod_easter.idItemChocolateBar), 5, false, 12)).setItemName("chocolateBar");
+		TombWand = (new ItemTombWand(mod_easter.cI("TombWand", mod_easter.idBlockTombWand), 2)).setItemName("TombWand");
+		CrossBun = (new ItemEasterFood(mod_easter.cI("CrossBun", mod_easter.idItemCrossBun), 1, false, 3)).setItemName("CrossBun");
+		HotCrossBun = (new ItemEasterFood(mod_easter.cI("HotCrossBun", mod_easter.idItemHotCrossBun), 10, true, 4)).setItemName("HotCrossBun");
+		Raisins = (new EasterItemRaisins(mod_easter.cI("Raisins", mod_easter.idItemRaisins), EasterBlocks.RaisinsCrop.blockID, Block.tilledField.blockID)).setItemName("Raisins");
+		ChocolateDiamond = (new ItemChocolateDiamonds(mod_easter.cI("ChocolateDiamond", mod_easter.idItemChocolateDiamonds), 6)).setItemName("ChocolateDiamond");
 
-//		EasterMonsterSpawner = (new EasterItemMonsterPlacer(mod_easter.idItemEasterMonsterSpawner)).setItemName("EasterMosterPlacer");
-		WhiteChocolateDust = (new EasterItemWhiteChocolateDust(mod_easter.idItemEasterWhiteChocolateDust)).setItemName("WhiteChocolateDust");
-		WhiteChocolateBar = (new ItemEasterFood(mod_easter.idItemEasterWhiteChocolateBar, 5, true, 10)).setItemName("WhiteChocolateBar");
-		DarkChocolateBar = (new ItemEasterFood(mod_easter.idItemEasterDarkChocolateBar, 5, true, 11)).setItemName("DarkChocolateBar");
+//		EasterMonsterSpawner = (new EasterItemMonsterPlacer(mod_easter.cI("EasterMonsterSpawner", mod_easter.idItemEasterMonsterSpawner))).setItemName("EasterMosterPlacer");
+		WhiteChocolateDust = (new EasterItemWhiteChocolateDust(mod_easter.cI("WhiteChocolateDust", mod_easter.idItemEasterWhiteChocolateDust))).setItemName("WhiteChocolateDust");
+		WhiteChocolateBar = (new ItemEasterFood(mod_easter.cI("WhiteChocolateBar", mod_easter.idItemEasterWhiteChocolateBar), 5, true, 10)).setItemName("WhiteChocolateBar");
+		DarkChocolateBar = (new ItemEasterFood(mod_easter.cI("DarkChocolateBar", mod_easter.idItemEasterDarkChocolateBar), 5, true, 11)).setItemName("DarkChocolateBar");
 			
 	    //tools
-		MilkChocolateSword = new EasterItemSword(mod_easter.idItemMilkChocolateSword, EasterToolMaterial.MILK, 20).setItemName("swordMilk");
-	    MilkChocolatePickaxe = new EasterItemPickaxe(mod_easter.idItemMilkChocolatePickaxe, EasterToolMaterial.MILK, 52).setItemName("pickMilk");
-	    MilkChocolateSpade = new EasterItemSpade(mod_easter.idItemMilkChocolateSpade, EasterToolMaterial.MILK, 36).setItemName("spadeMilk");
-	    MilkChocolateAxe = new EasterItemAxe(mod_easter.idItemMilkChocolateAxe, EasterToolMaterial.MILK, 68).setItemName("axeMilk");
-	    MilkChocolateHoe = new EasterItemHoe(mod_easter.idItemMilkChocolateHoe, EasterToolMaterial.MILK, 84).setItemName("hoeMilk");
+		MilkChocolateSword = new EasterItemSword(mod_easter.cI("MilkChocolateSword", mod_easter.idItemMilkChocolateSword), EasterToolMaterial.MILK, 20).setItemName("swordMilk");
+	    MilkChocolatePickaxe = new EasterItemPickaxe(mod_easter.cI("MilkChocolatePickaxe", mod_easter.idItemMilkChocolatePickaxe), EasterToolMaterial.MILK, 52).setItemName("pickMilk");
+	    MilkChocolateSpade = new EasterItemSpade(mod_easter.cI("MilkChocolateSpade", mod_easter.idItemMilkChocolateSpade), EasterToolMaterial.MILK, 36).setItemName("spadeMilk");
+	    MilkChocolateAxe = new EasterItemAxe(mod_easter.cI("MilkChocolateAxe", mod_easter.idItemMilkChocolateAxe), EasterToolMaterial.MILK, 68).setItemName("axeMilk");
+	    MilkChocolateHoe = new EasterItemHoe(mod_easter.cI("MilkChocolateHoe", mod_easter.idItemMilkChocolateHoe), EasterToolMaterial.MILK, 84).setItemName("hoeMilk");
 
-	    WhiteChocolateSword = new EasterItemSword(mod_easter.idItemWhiteChocolateSword, EasterToolMaterial.WHITE, 21).setItemName("swordWhite");
-	    WhiteChocolatePickaxe = new EasterItemPickaxe(mod_easter.idItemWhiteChocolatePickaxe, EasterToolMaterial.WHITE, 53).setItemName("pickWhite");
-	    WhiteChocolateSpade = new EasterItemSpade(mod_easter.idItemWhiteChocolateSpade, EasterToolMaterial.WHITE, 37).setItemName("spadeWhite");
-	    WhiteChocolateAxe = new EasterItemAxe(mod_easter.idItemWhiteChocolateAxe, EasterToolMaterial.WHITE, 69).setItemName("axeWhite");
-	    WhiteChocolateHoe = new EasterItemHoe(mod_easter.idItemWhiteChocolateHoe, EasterToolMaterial.WHITE, 85).setItemName("hoeWhite");
+	    WhiteChocolateSword = new EasterItemSword(mod_easter.cI("WhiteChocolateSword", mod_easter.idItemWhiteChocolateSword), EasterToolMaterial.WHITE, 21).setItemName("swordWhite");
+	    WhiteChocolatePickaxe = new EasterItemPickaxe(mod_easter.cI("WhiteChocolatePickaxe", mod_easter.idItemWhiteChocolatePickaxe), EasterToolMaterial.WHITE, 53).setItemName("pickWhite");
+	    WhiteChocolateSpade = new EasterItemSpade(mod_easter.cI("WhiteChocolateSpade", mod_easter.idItemWhiteChocolateSpade), EasterToolMaterial.WHITE, 37).setItemName("spadeWhite");
+	    WhiteChocolateAxe = new EasterItemAxe(mod_easter.cI("WhiteChocolateAxe", mod_easter.idItemWhiteChocolateAxe), EasterToolMaterial.WHITE, 69).setItemName("axeWhite");
+	    WhiteChocolateHoe = new EasterItemHoe(mod_easter.cI("WhiteChocolateHoe", mod_easter.idItemWhiteChocolateHoe), EasterToolMaterial.WHITE, 85).setItemName("hoeWhite");
 
-	    DarkChocolateSword = new EasterItemSword(mod_easter.idItemDarkChocolateSword, EasterToolMaterial.DARK, 19).setItemName("swordDark");
-	    DarkChocolatePickaxe = new EasterItemPickaxe(mod_easter.idItemDarkChocolatePickaxe, EasterToolMaterial.DARK, 51).setItemName("pickDark");
-	    DarkChocolateSpade = new EasterItemSpade(mod_easter.idItemDarkChocolateSpade, EasterToolMaterial.DARK, 35).setItemName("spadeDark");
-	    DarkChocolateAxe = new EasterItemAxe(mod_easter.idItemDarkChocolateAxe, EasterToolMaterial.DARK, 67).setItemName("axeDark");
-	    DarkChocolateHoe = new EasterItemHoe(mod_easter.idItemDarkChocolateHoe, EasterToolMaterial.DARK, 83).setItemName("hoeDark");
+	    DarkChocolateSword = new EasterItemSword(mod_easter.cI("DarkChocolateSword", mod_easter.idItemDarkChocolateSword), EasterToolMaterial.DARK, 19).setItemName("swordDark");
+	    DarkChocolatePickaxe = new EasterItemPickaxe(mod_easter.cI("DarkChocolatePickaxe", mod_easter.idItemDarkChocolatePickaxe), EasterToolMaterial.DARK, 51).setItemName("pickDark");
+	    DarkChocolateSpade = new EasterItemSpade(mod_easter.cI("DarkChocolateSpade", mod_easter.idItemDarkChocolateSpade), EasterToolMaterial.DARK, 35).setItemName("spadeDark");
+	    DarkChocolateAxe = new EasterItemAxe(mod_easter.cI("DarkChocolateAxe", mod_easter.idItemDarkChocolateAxe), EasterToolMaterial.DARK, 67).setItemName("axeDark");
+	    DarkChocolateHoe = new EasterItemHoe(mod_easter.cI("DarkChocolateHoe", mod_easter.idItemDarkChocolateHoe), EasterToolMaterial.DARK, 83).setItemName("hoeDark");
 	    
 	    //armours
 	    
 
-	    MilkChocolateHelmet = (new EasterItemArmor(mod_easter.idItemEasterMilkChocolateHelmet, EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 0)).setIconIndex(17).setItemName("MilkHelmet");
-	    MilkChocolatePlate = (new EasterItemArmor(mod_easter.idItemEasterMilkChocolatePlate, EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 1)).setIconIndex(33).setItemName("MilkPlate");
-	    MilkChocolateLegs = (new EasterItemArmor(mod_easter.idItemEasterMilkChocolateLegs, EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 2)).setIconIndex(49).setItemName("MilkLegs");
-	    MilkChocolateBoots= (new EasterItemArmor(mod_easter.idItemEasterMilkChocolateBoots, EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 3)).setIconIndex(65).setItemName("MilkBoots");
+	    MilkChocolateHelmet = (new EasterItemArmor(mod_easter.cI("MilkChocolateHelmet", mod_easter.idItemEasterMilkChocolateHelmet), EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 0)).setIconIndex(17).setItemName("MilkHelmet");
+	    MilkChocolatePlate = (new EasterItemArmor(mod_easter.cI("MilkChocolatePlate", mod_easter.idItemEasterMilkChocolatePlate), EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 1)).setIconIndex(33).setItemName("MilkPlate");
+	    MilkChocolateLegs = (new EasterItemArmor(mod_easter.cI("MilkChocolateLegs", mod_easter.idItemEasterMilkChocolateLegs), EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 2)).setIconIndex(49).setItemName("MilkLegs");
+	    MilkChocolateBoots= (new EasterItemArmor(mod_easter.cI("MilkChocolateBoots", mod_easter.idItemEasterMilkChocolateBoots), EasterArmorMaterial.MILK, ModLoader.addArmor("milk"), 3)).setIconIndex(65).setItemName("MilkBoots");
 
-	    DarkChocolateHelmet = (new EasterItemArmor(mod_easter.idItemEasterDarkChocolateHelmet, EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 0)).setIconIndex(16).setItemName("DarkHelmet");
-	    DarkChocolatePlate = (new EasterItemArmor(mod_easter.idItemEasterDarkChocolatePlate, EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 1)).setIconIndex(32).setItemName("DarkPlate");
-	    DarkChocolateLegs = (new EasterItemArmor(mod_easter.idItemEasterDarkChocolateLegs, EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 2)).setIconIndex(48).setItemName("DarkLegs");
-	    DarkChocolateBoots= (new EasterItemArmor(mod_easter.idItemEasterDarkChocolateBoots, EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 3)).setIconIndex(64).setItemName("DarkBoots");
+	    DarkChocolateHelmet = (new EasterItemArmor(mod_easter.cI("DarkChocolateHelmet", mod_easter.idItemEasterDarkChocolateHelmet), EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 0)).setIconIndex(16).setItemName("DarkHelmet");
+	    DarkChocolatePlate = (new EasterItemArmor(mod_easter.cI("DarkChocolatePlate", mod_easter.idItemEasterDarkChocolatePlate), EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 1)).setIconIndex(32).setItemName("DarkPlate");
+	    DarkChocolateLegs = (new EasterItemArmor(mod_easter.cI("DarkChocolateLegs", mod_easter.idItemEasterDarkChocolateLegs), EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 2)).setIconIndex(48).setItemName("DarkLegs");
+	    DarkChocolateBoots= (new EasterItemArmor(mod_easter.cI("DarkChocolateBoots", mod_easter.idItemEasterDarkChocolateBoots), EasterArmorMaterial.DARK, ModLoader.addArmor("dark"), 3)).setIconIndex(64).setItemName("DarkBoots");
 
-	    WhiteChocolateHelmet = (new EasterItemArmor(mod_easter.idItemEasterWhiteChocolateHelmet, EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 0)).setIconIndex(18).setItemName("WhiteHelmet");
-	    WhiteChocolatePlate = (new EasterItemArmor(mod_easter.idItemEasterWhiteChocolatePlate, EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 1)).setIconIndex(34).setItemName("WhitePlate");
-	    WhiteChocolateLegs = (new EasterItemArmor(mod_easter.idItemEasterWhiteChocolateLegs, EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 2)).setIconIndex(50).setItemName("WhiteLegs");
-	    WhiteChocolateBoots= (new EasterItemArmor(mod_easter.idItemEasterWhiteChocolateBoots, EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 3)).setIconIndex(66).setItemName("WhiteBoots");
+	    WhiteChocolateHelmet = (new EasterItemArmor(mod_easter.cI("WhiteChocolateHelmet", mod_easter.idItemEasterWhiteChocolateHelmet), EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 0)).setIconIndex(18).setItemName("WhiteHelmet");
+	    WhiteChocolatePlate = (new EasterItemArmor(mod_easter.cI("WhiteChocolatePlate", mod_easter.idItemEasterWhiteChocolatePlate), EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 1)).setIconIndex(34).setItemName("WhitePlate");
+	    WhiteChocolateLegs = (new EasterItemArmor(mod_easter.cI("WhiteChocolateLegs", mod_easter.idItemEasterWhiteChocolateLegs), EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 2)).setIconIndex(50).setItemName("WhiteLegs");
+	    WhiteChocolateBoots= (new EasterItemArmor(mod_easter.cI("WhiteChocolateBoots", mod_easter.idItemEasterWhiteChocolateBoots), EasterArmorMaterial.WHITE, ModLoader.addArmor("white"), 3)).setIconIndex(66).setItemName("WhiteBoots");
 	    
 	    
-	    grave = (new ItemGrave(mod_easter.idItemGrave)).setMaxStackSize(1).setItemName("grave");
+	    grave = (new ItemGrave(mod_easter.cI("grave", mod_easter.idItemGrave))).setMaxStackSize(1).setItemName("grave");
 	    
 	    
 //	    MysterEgg= (new EasterItemMysterFlower(mod_easter.idItemMysteryEgg)).setItemName("mysteryEgg");
