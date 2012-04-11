@@ -264,8 +264,8 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
 	            {
 	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
 	            }
-        	} else if(this.blockID == EasterBlocks.CocoaLeavesEmpty.blockID){
-        		if (par1World.rand.nextInt(15) == 0)
+        	} else {
+        		if (par1World.rand.nextInt(10) == 0)
 	            {
 	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterBlocks.CocoaSapling, 1));
 	            }
