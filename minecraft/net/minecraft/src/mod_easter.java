@@ -2,6 +2,7 @@ package net.minecraft.src;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import net.minecraft.client.Minecraft;
@@ -108,44 +109,30 @@ public class mod_easter extends BaseMod{
 	public static int idItemGrave = 4040;
 	
 	
-	
-	
-//	public static int idAchivementEgg = 2000;
-//	public static int idAchivementEggOpener = 2001;
-	
-	
-
-	
-//	public static final Achievement Egg = new Achievement(2000, "Egg", 5, 5, EasterBlocks.MysteryEgg3, null).setSpecial().registerAchievement();
-//	public static final Achievement EggOpener = new Achievement (idAchivementEggOpener, "EggOpener", -5, 5, EasterBlocks.EasterIncubatorActive, null).setSpecial().registerAchievement();
-	
 	static Achievement openInventory = AchievementList.openInventory;
 	static final Achievement Egg = new Achievement (2000, "EggOpener", -2, 0, Item.egg, openInventory).setSpecial().registerAchievement();
 
 	public mod_easter(){
 		
-
-		
-			
-			
-
 		ModLoader.addAchievementDesc(Egg, "Mystery Egg", "Search a painted egg on the ground");
 
-			
-			 
-			 
-		
 		ModLoader.addBiome(Easter);
 		
-//		ModLoader.addAchievementDesc(Egg, "Mystery egg", "Found The First Egg!");
-//		ModLoader.addAchievementDesc(EggOpener, "Egg Opener", "Gift Opening Time!");
 		
 		ModLoader.setInGameHook(this, true, true);
 		ModLoader.setInGUIHook(this, true, true);
 		
 		ModLoader.registerTileEntity(net.minecraft.src.TileEntityIncubator.class, "Egg Opener");
+		
+//		ModLoader.registerEntityID(EntityEasterBunny.class, "Easter Bunny", ModLoader.getUniqueEntityId());
+//		ModLoader.addSpawn(EntityEasterBunny.class, 12, 4, 4, EnumCreatureType.creature);
+
 	}
 
+	
+	public void addRenderer(Map map){
+		map.put(EntityEasterBunny.class, new RenderEasterBunny(new ModelEasterBunny(), 0.5F));
+	}
 	
     public void onItemPickup(EntityPlayer player, ItemStack itemstack) {
     	if(itemstack.itemID == EasterBlocks.MysteryEgg1.blockID ||
@@ -161,16 +148,11 @@ public class mod_easter extends BaseMod{
     	}
     	
     }
-//    public void takenFromCrafting(EntityPlayer player, ItemStack itemstack, IInventory iinventory){
-//    	if(itemstack.itemID == EasterBlocks.EasterIncubatorIdle.blockID){
-//    		player.addStat(Egg, 1);
-//    	}
-//    }
 
 	
 	@Override
 	public String getVersion() {
-		return "1.2";
+		return "1.3";
 	}
 
 	@Override

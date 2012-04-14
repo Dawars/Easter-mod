@@ -4,16 +4,17 @@ public class EasterRecipes {
 	  public EasterRecipes()
 	    {
 		  	ModLoader.addRecipe(new ItemStack(EasterItems.ChocolateBar, 6), new Object[] {
-		  		" X ", "ZZZ", "ZZZ", Character.valueOf('Z'), new ItemStack(Item.dyePowder, 1, 3),
-		  		Character.valueOf('X'), Item.bucketMilk
+		  		"SMS", "CCC",
+		  		Character.valueOf('C'), new ItemStack(Item.dyePowder, 1, 3),
+		  		Character.valueOf('M'), Item.bucketMilk,
+		  		Character.valueOf('S'), Item.sugar
+	        });
+		  	ModLoader.addRecipe(new ItemStack(EasterItems.DarkChocolateBar, 6), new Object[] {
+		  		"CSC", "CCC",
+		  		Character.valueOf('C'), new ItemStack(Item.dyePowder, 1, 3),
+		  		Character.valueOf('S'), Item.sugar
 	        });
 
-		  	ModLoader.addRecipe(new ItemStack(EasterItems.DarkChocolateBar, 6), new Object[] {
-		  		" S ", "ZZZ", "ZZZ",
-		  		Character.valueOf('Z'), new ItemStack(Item.dyePowder, 1, 3),
-		  		Character.valueOf('Z'), new ItemStack(Item.bucketMilk, 1)
-	        });
-		  	
 		  	ModLoader.addRecipe(new ItemStack(EasterItems.ChocolateDiamond, 6), new Object[] {
 		  		"ZZZ", "ZXZ", "ZZZ",
 		  		Character.valueOf('Z'), EasterItems.ChocolateBar,

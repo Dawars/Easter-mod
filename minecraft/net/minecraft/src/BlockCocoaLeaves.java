@@ -77,10 +77,6 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
         }
     }
 
-    public boolean isOpaqueCube()
-    {
-        return !this.graphicsLevel;
-    }
 
 
 
@@ -93,10 +89,10 @@ public class BlockCocoaLeaves extends BlockLeavesBase implements ITextureProvide
 //        this.blockIndexInTexture = this.baseIndexInPNG + (par1 ? 0 : 1);
 //    }
 
-    public boolean shouldSideBeRendered(IBlockAccess iblockaccess, int i, int j, int k, int l)
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
-        int i1 = iblockaccess.getBlockId(i, j, k);
-        return true;
+        int var6 = par1IBlockAccess.getBlockId(par2, par3, par4);
+        return !this.graphicsLevel && (var6 == EasterBlocks.CocoaLeaves.blockID || var6 == EasterBlocks.CocoaLeavesEmpty.blockID) ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
     }
 
     public void onBlockRemoval(World world, int i, int j, int k)
