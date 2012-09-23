@@ -38,3 +38,5 @@ src/common/buildcraft/*
 minecraft old src/*
 temp/*
 modsrc/*
+
+.metadata/*
