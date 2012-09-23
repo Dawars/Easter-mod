@@ -6,11 +6,10 @@ Not only for Easter!
 Want to help?
 -------------
 You can do it by finding bugs or fixing them!
-*Finding a bug:
+### Found a bug?
+* Write it down here: https://github.com/Dawars/Easter-mod/issues
 
-### Write it down here: https://github.com/Dawars/Easter-mod/issues
-
-* Fix a bug:
+### How to fix a bug:
 1. Fork this Repo
 2. Make changes (bugfix)
 3. Make a Pull Request!
