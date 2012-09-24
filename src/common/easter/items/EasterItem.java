@@ -1,4 +1,4 @@
-package easter;
+package easter.items;
 
 import cpw.mods.fml.client.ITextureFX;
 import easter.common.DefaultProps;

@@ -1,4 +1,4 @@
-package easter;
+package easter.items;
 
 import easter.common.DefaultProps;
 import net.minecraft.src.ItemFood;

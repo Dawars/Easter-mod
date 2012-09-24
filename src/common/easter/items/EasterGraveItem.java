@@ -1,5 +1,6 @@
-package easter;
+package easter.items;
 
+import easter.common.Easter;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockBed;
 import net.minecraft.src.CreativeTabs;
@@ -26,7 +27,7 @@ public class EasterGraveItem extends EasterItem{
         else
         {
             ++par5;
-            Block var11 = EasterCore.Grave;
+            Block var11 = Easter.Grave;
             int var12 = MathHelper.floor_double((double)(par2EntityPlayer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
             byte var13 = 0;
             byte var14 = 0;

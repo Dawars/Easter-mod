@@ -1,4 +1,4 @@
-package easter;
+package easter.blocks;
 
 import easter.common.DefaultProps;
 import net.minecraft.src.BlockContainer;

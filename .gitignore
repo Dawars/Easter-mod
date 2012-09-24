@@ -32,11 +32,10 @@ src/common/net/*
 src/common/org/*
 
 src/common/railcraft/*
+src/common/ic2/*
 src/common/forestry/*
 src/common/buildcraft/*
 
 minecraft old src/*
 temp/*
 modsrc/*
-
-.metadata/*

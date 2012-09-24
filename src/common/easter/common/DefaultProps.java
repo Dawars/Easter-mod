@@ -36,6 +36,9 @@ public class DefaultProps {
 	public static int COCOA_BUSH_SAPLING_ID = 2653;
 	public static int COCOA_BUSH_LOG_ID = 2654;
 	public static int COCOA_BUSH_LEAVES_ID = 2655;
+	public static int COCOA_BUSH_LEAVES_EMPTY_ID = 2656;
+	
+//	public static int COCOA_BUSH_LEAVES_EMPTY_ID = 2657;
 	
 	//item ids 15000 - 
 	public static int CHOCOLATE_BAR_ID = 15000;

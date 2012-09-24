@@ -1,4 +1,4 @@
-package easter;
+package easter.items;
 
 public class EasterRecipes {
 

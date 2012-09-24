@@ -1,26 +1,26 @@
-package easter;
+package easter.blocks;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.src.BlockLeavesBase;
+import easter.common.Easter;
+
 import net.minecraft.src.ColorizerFoliage;
 import net.minecraft.src.IBlockAccess;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
-import net.minecraftforge.common.IShearable;
 
-public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
+public class BlockCocoaLeaves extends EasterLeavesBase
 {
 
-    protected CocoaBushLeaves(int i, int j)
+    public BlockCocoaLeaves(int i, int j)
     {
-    	
         super(i, j, Material.leaves, false);
         baseIndexInPNG = 6;
         this.setTickRandomly(true);
+        this.setRequiresSelfNotify();
     }
 
     public int getBlockColor()
@@ -90,7 +90,7 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
     public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
         int var6 = par1IBlockAccess.getBlockId(par2, par3, par4);
-        return !this.graphicsLevel && (var6 == EasterCore.CocoaLeaves.blockID || var6 == EasterCore.CocoaLeavesEmpty.blockID) ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
+        return !this.graphicsLevel && (var6 == Easter.CocoaLeaves.blockID || var6 == Easter.CocoaLeavesEmpty.blockID) ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
     }
 
     public void onBlockRemoval(World world, int i, int j, int k)
@@ -106,7 +106,7 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
                     for(int l1 = -l; l1 <= l; l1++)
                     {
                         int i2 = world.getBlockId(i + j1, j + k1, k + l1);
-                        if(i2 == EasterCore.CocoaLeaves.blockID || i2 == EasterCore.CocoaLeavesEmpty.blockID)
+                        if(i2 == Easter.CocoaLeaves.blockID || i2 == Easter.CocoaLeavesEmpty.blockID)
                         {
                             int j2 = world.getBlockMetadata(i + j1, j + k1, k + l1);
                             world.setBlockMetadata(i + j1, j + k1, k + l1, j2 | 8);
@@ -155,11 +155,11 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
                             {
                                 var15 = par1World.getBlockId(par2 + var12, par3 + var13, par4 + var14);
 
-                                if (var15 == EasterCore.CocoaLog.blockID)
+                                if (var15 == Easter.CocoaLog.blockID)
                                 {
                                     this.adjacentTreeBlocks[(var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11] = 0;
                                 }
-                                else if (var15 == EasterCore.CocoaLeaves.blockID || var15 == EasterCore.CocoaLeavesEmpty.blockID)
+                                else if (var15 == Easter.CocoaLeaves.blockID || var15 == Easter.CocoaLeavesEmpty.blockID)
                                 {
                                     this.adjacentTreeBlocks[(var12 + var11) * var10 + (var13 + var11) * var9 + var14 + var11] = -2;
                                 }
@@ -243,7 +243,7 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
     
     public int idDropped(int i, Random random)
     {
-        return EasterCore.CocoaSapling.blockID;
+        return Easter.CocoaSapling.blockID;
     }
     
     /**
@@ -253,7 +253,7 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
     {
         if (!par1World.isRemote)
         {
-        	if(this.blockID == EasterCore.CocoaLeaves.blockID){
+        	if(this.blockID == Easter.CocoaLeaves.blockID){
         		if (par1World.rand.nextInt(8) == 0)
 	            {
 	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.dyePowder, 1, 3));
@@ -261,33 +261,12 @@ public class CocoaBushLeaves extends BlockLeavesBase implements IShearable
         	} else {
         		if (par1World.rand.nextInt(10) == 0)
 	            {
-	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(EasterCore.CocoaSapling, 1));
+	                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Easter.CocoaSapling, 1));
 	            }
         	}
         }
     }
     
-    @Override
-	public String getTextureFile() {
-		return "/easter/EasterBlocks.png";
-	}
-    
     private int baseIndexInPNG;
     int adjacentTreeBlocks[];
-	@Override
-	public boolean isShearable(ItemStack item, World world, int x, int y, int z) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public ArrayList<ItemStack> onSheared(ItemStack item, World world, int x,
-			int y, int z, int fortune) {
-		ArrayList<ItemStack> harvested = null;
-		
-		if(world.getBlockId(x, y, z) == EasterCore.CocoaLeaves.blockID){
-			harvested.add(item);
-		}
-		return harvested;
-	}
 }

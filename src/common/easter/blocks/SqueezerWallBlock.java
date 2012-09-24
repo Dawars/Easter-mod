@@ -1,4 +1,4 @@
-package easter;
+package easter.blocks;
 
 import net.minecraft.src.BlockContainer;
 import net.minecraft.src.Material;
@@ -7,7 +7,7 @@ import net.minecraft.src.World;
 
 public class SqueezerWallBlock extends EasterBlockContainer{
 
-	protected SqueezerWallBlock(int i) {
+	public SqueezerWallBlock(int i) {
 		super(i, 3 * 16 + 0, Material.wood);
 		this.blockIndexInTexture = 3 * 16 + 0;
 	}

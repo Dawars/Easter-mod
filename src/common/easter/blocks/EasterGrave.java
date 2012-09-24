@@ -1,4 +1,4 @@
-package easter;
+package easter.blocks;
 
 import cpw.mods.fml.common.Side;
 import cpw.mods.fml.common.asm.SideOnly;
@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Random;
 
 import easter.common.DefaultProps;
+import easter.common.Easter;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.ChunkCoordinates;
@@ -18,7 +19,7 @@ import net.minecraft.src.IBlockAccess;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
 
-public class EasterGrave extends Block
+public class EasterGrave extends EasterBlock
 {
     /** Maps the foot-of-bed block to the head-of-bed block. */
     public static final int[][] footBlockToHeadBlockMap = new int[][] {{0, 1}, { -1, 0}, {0, -1}, {1, 0}};
@@ -32,11 +33,8 @@ public class EasterGrave extends Block
     public EasterGrave(int par1)
     {
         super(par1, 1 * 16 + 3, Material.rock);
-//        this.setBounds();
+        this.setBounds();
     }
-    public String getTextureFile() {
-		return DefaultProps.TEXTURE_BLOCKS;
-	}
 
     /**
      * Called upon block activation (right click on the block.)
@@ -225,7 +223,7 @@ public class EasterGrave extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return isBlockHeadOfBed(par1) ? 0 : EasterCore.GraveItem.shiftedIndex;
+        return isBlockHeadOfBed(par1) ? 0 : Easter.GraveItem.shiftedIndex;
     }
 
     /**
@@ -350,7 +348,7 @@ public class EasterGrave extends Block
      */
     public boolean isBed(World world, int x, int y, int z, EntityLiving player)
     {
-        return blockID == EasterCore.Grave.blockID;
+        return blockID == Easter.Grave.blockID;
     }
     
     /**
@@ -423,6 +421,6 @@ public class EasterGrave extends Block
      */
     public int idPicked(World world, int par2, int par3, int par4)
     {
-        return EasterCore.GraveItem.shiftedIndex;
+        return Easter.GraveItem.shiftedIndex;
     }
 }

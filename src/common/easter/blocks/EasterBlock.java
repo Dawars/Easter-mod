@@ -1,4 +1,4 @@
-package easter;
+package easter.blocks;
 
 import easter.common.DefaultProps;
 import net.minecraft.src.Block;
@@ -12,6 +12,10 @@ public class EasterBlock extends Block{
 		super(i, j, mat);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
+	 public EasterBlock(int i, Material mat)
+    {
+        super(i, mat);
+    }
 	
 	public String getTextureFile(){
 		return DefaultProps.TEXTURE_BLOCKS;
